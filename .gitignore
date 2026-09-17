@@ -1,0 +1,13 @@
+#Dépendances Nodes.js : jamais dans Git
+nodes_modules/
+
+* Variables d'environnement (mots de passe, clés d'API)
+.environnement
+
+#fichiers système
+
+.Ds_Store
+Thumbs.db
+
+#Réglages locaux de l'éditeur
+.vscode/
