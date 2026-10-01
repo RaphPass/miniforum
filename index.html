@@ -28,6 +28,7 @@
         <!-- Titre du site + navigation-->
     </header>
     <main>
+                <!-- Liste des sujets-->
         <section id="sujets">
             <h2> Sujets récent </h2>
             <article>
@@ -36,8 +37,6 @@
                 <p>
                     paragraphe1
                 </p>
-                
-
             </article>
 
             <article>
@@ -56,12 +55,49 @@
                 <p>
                     paragraphe3
                 </p>
-                
             </article>
-                
-           
         </section>
-        <!-- Liste des sujets-->
+            <!--creation de nouveaux sujets-->
+        <section>
+            <h2>Nouveau sujet</h2>
+            <form action="/topics" method="post">
+                <fieldset>
+                    <legend> <h4>Votre message</h4></legend>
+
+                    <label for="pseudo"><h4>Pseudo</h4></label>
+                    <input type="text" id="pseudo" name="pseudo" placeholder="Roger" required>
+
+                    <label for="titre"><h3>Titre du sujet</h3></label>
+                    <input type="text" id="titre" name="titre" maxlength="80" required>
+
+                    <label for="message"><h3>Message</h3></label>
+                    <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
+                </fieldset>
+
+                <fieldset>
+                    <legend><h4>Options de publication</h4></legend>
+
+                    <label for="message"><h4>Catégorie</h4></label>
+                    <select name="categorie" id="categorie">
+                        <option value="general">Général</option>
+                        <option value="aide">Aide</option>
+                        <option value="projet">Projets</option>
+                    </select>
+
+                    <legend><h4>visibilité</h4></legend>
+
+                    <input type="radio" id="public" name="visibilite" value="public" checked>
+                    <label for="public">Public</label>
+
+                    <input type="radio" id="prive" name="visibilite" value="prive">
+                    <label for="prive">Reservé aux membres</label>
+                    </select>
+                </fieldset>
+                <button type="submit">Publier le sujet</button>
+            </form>
+
+        </section>
+
     </main>
     <footer>
         <p>
