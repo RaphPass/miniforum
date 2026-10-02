@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    <header><!-- Titre du site + navigation-->
+        <h1>MiniForum</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href='index.html' style="font-size: 20px">Accueil</a>
+                    <a href='index.html#sujets' style="font-size: 20px">Sujets</a>
+                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
+                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h2>Connexion</h2>
+        <form action="/connexion" method="post">
+            <fieldset>
+                <legend><strong>identifiants</strong></legend>
+                <p>
+                <label for="identifiant">Pseudo ou adresse e-mail</label>
+                <input type="text" id="identifiant" name="identifiant" required>
+                </p>
+
+                <p>
+                <label for="motdepasse">Mot de passe</label>
+                <input type="password" id="motdepasse" name="motdepasse" required>
+                </p>
+
+                <p>
+                <input type="checkbox" name="resterconnecter" id="resterconnecter">
+                <label for="resterconnecter">Rester connecté sur cet appareil</label>
+                </p>
+            </fieldset>
+
+            <button type="submit">Se Connecter</button>
+            <a href="inscription.html">Pas encore de compte ? S'inscrire</a>
+
+        </form>
+
+
+    </main>
+    <footer><!-- Pied de page-->
+        <p>
+            MiniForum
+        </p>
+        <p>
+            Projet du cours de développement web Classe passerelle - cfpt-i
+
+        </p>
+        
+    </footer>
+</body>
+</html>

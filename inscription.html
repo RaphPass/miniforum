@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    <header><!-- Titre du site + navigation-->
+        <h1>MiniForum</h1>
+        <nav>
+            <ul>
+                <li>
+                    <a href='index.html' style="font-size: 20px">Accueil</a>
+                    <a href='index.html#sujets' style="font-size: 20px">Sujets</a>
+                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
+                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Créer un compte</h2>
+        <form action="/inscription" method="post">
+            <fieldset>
+                <legend>Identifiants</legend>
+                <p>
+                <label for="pseudo">Pseudo</label>
+                <input type="text" name="pseudo" id="pseudo" pattern="[A-Za-z0-9]{3,15}" title="3 à 15 caractères : chiffre ou lettres uniquement">
+                </p>
+
+                <p>
+                <label for="email">Adresse e-mail</label>
+                <input type="email" id="email" name="email" required>
+                </p>
+
+                <p>
+                <label for="motdepasse">Mot de passe</label>
+                <input type="password" id="motdepasse" name="motdepasse" minlength="8" required>
+                </p>
+
+                <p>
+                <label for="naissance">Date de naissance</label>
+                <input type="date" name="naissance" id="naissance">
+                </p>
+            </fieldset>
+            <fieldset>
+                <legend><strong>Préférences</strong></legend>
+                
+                
+                <input type="checkbox" name="newsletter" id="newsletter">
+                <label for="newsletter">Recevoir la lettre d'information</label>
+                <p></p>
+                <input type="checkbox" name="cgu" id="cgu" required>
+                <label for="cgu">J'accepte les conditions d'utilisation</label>
+            </fieldset>
+            <button type="submit">Créer mon compte</button>
+            <a href="connexion.html">Déja inscrit ? Se connecter</a>
+
+        </form>
+
+    </main>
+
+        <footer><!-- Pied de page-->
+            <p>
+                MiniForum
+            </p>
+            <p>
+                Projet du cours de développement web Classe passerelle - cfpt-i
+
+            </p>
+        
+        </footer>
+</body>
+</html>

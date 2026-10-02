@@ -11,8 +11,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href='index.html'>Accueil</a>
-                    <a href='#sujets'>Sujets</a>
+                    <a href='index.html' style="font-size: 20px">Accueil</a>
+                    <a href='#sujets' style="font-size: 20px">Sujets</a>
+                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
+                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
                 </li>
             </ul>
         </nav>
@@ -61,13 +63,35 @@
                 <p>
                     texte du message
                 </p>
+                <form action="/reponse" method="post">
+                    <h3>Répondre à ce sujet</h3>
+                    <fieldset>
+                        <legend>Votre réponse</legend>
+
+                        <label for="pseudo"><strong>Pseudo</strong></label>
+                        <input type="text" name="pseudo" id="pseudo" required>
+
+                        <label for="message"><strong>Message</strong></label>
+                        <textarea name="message" id="message" required></textarea>
+                    </fieldset>
+                    <button type="submit">Envoyer la réponse</button>
+
+                </form>
             </article>
          </section>
+         
         <!-- Liste des sujets-->
     </main>
 
 
     <footer>
+        <p>
+            MiniForum
+        </p>
+        <p>
+            Projet du cours de développement web Classe passerelle - cfpt-i
+
+        </p>
         <!-- Pied de page-->
     </footer>
 </body>

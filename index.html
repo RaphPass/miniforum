@@ -10,7 +10,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MiniForum- Accueil</title>
+    <title>MiniForum - Accueil</title>
 </head>
 <body>
 
@@ -19,8 +19,10 @@
         <nav>
             <ul>
                 <li>
-                    <a href='index.html'>Accueil</a>
-                    <a href='#sujets'>Sujets</a>
+                    <a href='index.html' style="font-size: 20px">Accueil</a>
+                    <a href='#sujets' style="font-size: 20px">Sujets</a>
+                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
+                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
                 </li>
             </ul>
         </nav>
@@ -62,38 +64,45 @@
             <h2>Nouveau sujet</h2>
             <form action="/topics" method="post">
                 <fieldset>
-                    <legend> <h4>Votre message</h4></legend>
-
-                    <label for="pseudo"><h4>Pseudo</h4></label>
+                    <legend><strong>Votre message</strong> </legend>
+                    <p>
+                    <label for="pseudo">Pseudo</label>
                     <input type="text" id="pseudo" name="pseudo" placeholder="Roger" required>
+                    </p>
 
-                    <label for="titre"><h3>Titre du sujet</h3></label>
+                    <p>
+                    <label for="titre">Titre du sujet</label>
                     <input type="text" id="titre" name="titre" maxlength="80" required>
-
-                    <label for="message"><h3>Message</h3></label>
+                    </p>
+                    <p>
+                    <label for="message">Message</label>
                     <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
+                    </p>
                 </fieldset>
 
                 <fieldset>
-                    <legend><h4>Options de publication</h4></legend>
+                    <legend><strong>Options de publication</strong></legend>
 
-                    <label for="message"><h4>Catégorie</h4></label>
+                    <label for="categorie">Catégorie</label>
                     <select name="categorie" id="categorie">
                         <option value="general">Général</option>
                         <option value="aide">Aide</option>
                         <option value="projet">Projets</option>
                     </select>
 
-                    <legend><h4>visibilité</h4></legend>
-
+                    <p>
+                    <label>visibilité</label>
+                    </p>
                     <input type="radio" id="public" name="visibilite" value="public" checked>
                     <label for="public">Public</label>
-
+                    
                     <input type="radio" id="prive" name="visibilite" value="prive">
                     <label for="prive">Reservé aux membres</label>
-                    </select>
+                    
+                    
                 </fieldset>
-                <button type="submit">Publier le sujet</button>
+
+                <button type="submit">Publier le sujet</button>   
             </form>
 
         </section>
