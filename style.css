@@ -1,3 +1,27 @@
+/*Couleurs:
+texte :        #222222
+fond de page : #EEEEEE
+*/
+/* === 1. Reglage generaux =============*/
+*{
+    box-sizing: border-box;
+}
+body {
+    font-family: Helvetica, Arial, sans-serif;
+    size: 16px;
+    line-height: 1.6;
+    color:#222222;
+    background-color:#EEEEEE;
+    margin: 0 auto;
+    max-width: 900px;
+    padding: 16px;
+}
+
+/* === 2. En tete et navigation ========*/
+/* === 3. Contenu principal ============*/
+/* === 4. Cartes de sujet ==============*/
+/* === 5. Forumulaires =================*/
+/* === 6. Pied de page =================*/
 button{
     background-color: #1D4E89;
     color : white;
