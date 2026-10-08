@@ -28,7 +28,11 @@ body {
  background-color: #0A4666;
  color:#EEEEEE;
  padding:12px 24px;
+ list-style: none;
+ margin:0;
+ padding:0;
 }
+
 .entete a{
     color:#EEEEEE
 }
@@ -55,13 +59,9 @@ nav ul{
     font-size: small;
 }
 
-.liste-sujet{
 
-}
 
-.carte-sujet{
 
-}
 
 .carte-message{
 
@@ -77,7 +77,24 @@ nav ul{
 
 /* === 3. Contenu principal ============*/
 /* === 4. Cartes de sujet ==============*/
-/* === 5. Forumulaires =================*/
+.liste-sujet{
+    display : flex;
+    flex-direction:column;
+    gap : 16px;
+}
+
+.carte-sujet{
+    padding:0px 16px;
+    border: solid 1px;
+    border-radius:8px;
+    border-color: #2C6F93;
+    margin-top: 20px;
+}
+.carte-sujet>h3{
+    font-size: larger;
+    color:#0A4666;
+}
+/* === 5. Formulaires =================*/
 /* === 6. Pied de page =================*/
 
 button{
@@ -85,6 +102,6 @@ button{
     color : white;
     padding : 10px 20px ;
     border : none;
-    border-radius:4px;
+    border-radius:8px;
     cursor: pointer;
 }
