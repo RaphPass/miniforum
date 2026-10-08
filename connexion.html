@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <header><!-- Titre du site + navigation-->
+    <header class="entete"><!-- Titre du site + navigation-->
         <h1>MiniForum</h1>
         <nav>
             <ul>
@@ -17,6 +17,14 @@
                     <a href='index.html#sujets' style="font-size: 20px">Sujets</a>
                     <a href='inscription.html' style="font-size: 20px">Inscription</a>
                     <a href='connexion.html' style="font-size: 20px">Connexion</a>
+
+                    <form action="recherche.html" method="get" style="display:inline">
+                        <!-- On utilise ici get car ça permet de placer les données dans l'url -->
+
+                        <input type="search" name="rechercher" placeholder="rechercher">
+                        <button type="submit">Rechercher</button>
+
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -42,14 +50,14 @@
                 </p>
             </fieldset>
 
-            <button type="submit">Se Connecter</button>
+            <button type="submit" class="bouton">Se Connecter</button>
             <a href="inscription.html">Pas encore de compte ? S'inscrire</a>
 
         </form>
 
 
     </main>
-    <footer><!-- Pied de page-->
+    <footer class="pied"><!-- Pied de page-->
         <p>
             MiniForum
         </p>

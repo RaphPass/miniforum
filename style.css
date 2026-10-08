@@ -1,6 +1,9 @@
 /*Couleurs:
-texte :        #222222
-fond de page : #EEEEEE
+texte :                  #222222
+fond de page :           #EEEEEE
+couleur fond en tete:    #0A4666 bleu plus foncé
+couleur text en tete:    #EEEEEE
+#2C6F93 bleu intermediaire mat
 */
 /* === 1. Reglage generaux =============*/
 *{
@@ -18,10 +21,65 @@ body {
 }
 
 /* === 2. En tete et navigation ========*/
+.entete{
+ display:flex;
+ justify-content: space-between;
+ align-items: center;
+ background-color: #0A4666;
+ color:#EEEEEE;
+ padding:12px 24px;
+}
+.entete a{
+    color:#EEEEEE
+}
+
+
+nav ul{
+    display: flex;
+    /*justify-content: space-between;
+    align-items: center;*/
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.pied{
+    border: solid 1px ;
+    background-color: #DDDDDD ;
+    border-color: #2C6F93;
+    color:#222222;
+    border-radius: 3px;
+    padding:10px 0px;
+    margin-top: 30px;
+    text-align: center;
+    font-size: small;
+}
+
+.liste-sujet{
+
+}
+
+.carte-sujet{
+
+}
+
+.carte-message{
+
+}
+
+.bouton{
+
+}
+
+.pied{
+
+}
+
 /* === 3. Contenu principal ============*/
 /* === 4. Cartes de sujet ==============*/
 /* === 5. Forumulaires =================*/
 /* === 6. Pied de page =================*/
+
 button{
     background-color: #1D4E89;
     color : white;

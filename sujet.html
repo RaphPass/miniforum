@@ -8,7 +8,7 @@
 
 </head>
 <body>
-    <header>
+    <header class="entete">
         <h1>MiniForum</h1>
         <nav>
             <ul>
@@ -17,6 +17,13 @@
                     <a href='#sujets' style="font-size: 20px">Sujets</a>
                     <a href='inscription.html' style="font-size: 20px">Inscription</a>
                     <a href='connexion.html' style="font-size: 20px">Connexion</a>
+                    
+                    <form action="recherche.html" method="get" style="display:inline">
+                        <!-- On utilise ici get car ça permet de placer les données dans l'url -->
+                        <input type="search" name="rechercher" placeholder="rechercher">
+                        <button type="submit">Rechercher</button>
+
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -44,7 +51,7 @@
                 <p>
                     <strong>auteur1</strong>, <time datetime="2026-09-24">24 septembre 2026</time>
                 </p>
-                <p>
+                <p class="carte-message">
                     texte du message
                 </p>
             </article>
@@ -53,7 +60,7 @@
                 <p>
                     <strong>auteur2</strong>, date
                 </p>
-                <p>
+                <p  class="carte-message">
                     texte du message
                 </p>
             </article>
@@ -62,7 +69,7 @@
                 <p>
                     <strong>auteur3</strong>, date
                 </p>
-                <p>
+                <p class="carte-message">
                     texte du message
                 </p>
                 <form action="/reponse" method="post">
@@ -76,7 +83,7 @@
                         <label for="message"><strong>Message</strong></label>
                         <textarea name="message" id="message" required></textarea>
                     </fieldset>
-                    <button type="submit">Envoyer la réponse</button>
+                    <button type="submit" class="bouton">Envoyer la réponse</button>
 
                 </form>
             </article>
@@ -86,7 +93,7 @@
     </main>
 
 
-    <footer>
+    <footer class="pied">
         <p>
             MiniForum
         </p>
