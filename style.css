@@ -33,7 +33,8 @@ body {
 }
 
 .entete a{
-    color:#EEEEEE
+    color:#EEEEEE;
+    text-decoration: none;
 }
 
 
@@ -104,8 +105,55 @@ nav ul{
 
 /* === 5. Formulaires =================*/
 
+input, textarea, select, button {
+    font-family:inherit;
+    width: 100%;
+    padding: 8px;
+    border :solid 1px;
+    border-radius: 8px;
+}
+label{
+    display:block;
+    margin: 8px;
+}
+fieldset{
+    background-color: white;
+    margin: 10px;
+}
+.bouton{
+    color : white;
+    border: 0px;
+    padding: 16px;
+    cursor: pointer;
+}
+textarea{
+    resize: vertical;
 
+}
+nav a:hover{
+    color:orange;
+}
+nav a:focus-visible {
+outline: 2px solid orange   ;
+outline-offset: 2px;
+}
+a:hover{
+    color:#0056b3;
+}
+button:hover, input:hover :hover{
+    /* background-color: #0056b3;       */
+}
+liste-messages li:nth-child(even) {
+background-color: whitesmoke; 
+}
+input:focus,textarea:focus{
+    border-color:pink;
+}
 
+input:focus {
+    border: 4px solid #00ffff;
+    outline: 0px;
+}
 /* === 6. Pied de page =================*/
 
 button{
