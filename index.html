@@ -5,127 +5,136 @@
     4. verifier sur w3c validator avant le git commit final
  -->
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MiniForum - Accueil</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <header class="entete">
-        <h1>MiniForum</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href='index.html' style="font-size: 20px">Accueil</a>
-                    <a href='#sujets' style="font-size: 20px">Sujets</a>
-                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
-                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
+      <h1>MiniForum</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" style="font-size: 20px">Accueil</a></li>
+          <li><a href="#sujets" style="font-size: 20px">Sujets</a></li>
+          <li>
+            <a href="inscription.html" style="font-size: 20px">Inscription</a>
+          </li>
+          <li>
+            <a href="connexion.html" style="font-size: 20px">Connexion</a>
+          </li>
 
-                    <form action="recherche.html" method="get" style="display:inline">
-                        <!-- On utilise ici get car ça permet de placer les données dans l'url -->
+          <li>
+            <form action="recherche.html" method="get" style="display: inline">
+              <!-- On utilise ici get car ça permet de placer les données dans l'url -->
 
-                        <input type="search" name="rechercher" placeholder="rechercher">
-                        <button type="submit">Rechercher</button>
+              <input type="search" name="rechercher" placeholder="rechercher" />
+              <button type="submit">Rechercher</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
 
-                    </form>
-                </li>
-            </ul>
-        </nav>
-
-        <!-- Titre du site + navigation-->
+      <!-- Titre du site + navigation-->
     </header>
     <main>
-                <!-- Liste des sujets-->
-        <section id="sujets" class="list-sujets">
-            <h2> Sujets récent </h2>
-            <article class="carte-sujet">
-                <h3> <a href = 'sujet.html'> Sujet1 </a></h3>
-                <strong>auteur1</strong>, catégorie1
-                <p>
-                    paragraphe1
-                </p>
-            </article>
+      <!-- Liste des sujets-->
+      <section id="sujets" class="list-sujets">
+        <h2>Sujets récent</h2>
+        <article class="carte-sujet">
+          <h3><a href="sujet.html"> Sujet1 </a></h3>
+          <strong>auteur1</strong>, catégorie1
+          <p>paragraphe1</p>
+        </article>
 
-            <article class="carte-sujet">
-                <h3>Sujet2 </h3>
-                <strong>auteur2</strong>, catégorie2
-                <p>
-                    paragraphe2
-                </p>
-                
-                
-            </article>
+        <article class="carte-sujet">
+          <h3>Sujet2</h3>
+          <strong>auteur2</strong>, catégorie2
+          <p>paragraphe2</p>
+        </article>
 
-            <article class="carte-sujet">
-                <h3>Sujet3 </h3>
-                <strong>auteur3</strong>, catégorie3
-                <p>
-                    paragraphe3
-                </p>
-            </article>
-        </section>
-            <!--creation de nouveaux sujets-->
-        <section>
-            <h2>Nouveau sujet</h2>
-            <form action="/topics" method="post">
-                <fieldset>
-                    <legend><strong>Votre message</strong> </legend>
-                    <p>
-                    <label for="pseudo">Pseudo</label>
-                    <input type="text" id="pseudo" name="pseudo" placeholder="Roger" required>
-                    </p>
+        <article class="carte-sujet">
+          <h3>Sujet3</h3>
+          <strong>auteur3</strong>, catégorie3
+          <p>paragraphe3</p>
+        </article>
+      </section>
+      <!--creation de nouveaux sujets-->
+      <section>
+        <h2>Nouveau sujet</h2>
+        <form action="/topics" method="post">
+          <fieldset>
+            <legend><strong>Votre message</strong></legend>
+            <p>
+              <label for="pseudo">Pseudo</label>
+              <input
+                type="text"
+                id="pseudo"
+                name="pseudo"
+                placeholder="Roger"
+                required
+              />
+            </p>
 
-                    <p>
-                    <label for="titre">Titre du sujet</label>
-                    <input type="text" id="titre" name="titre" maxlength="80" required>
-                    </p>
-                    <p>
-                    <label for="message">Message</label>
-                    <textarea id="message" name="message" rows="6" maxlength="500" required></textarea>
-                    </p>
-                </fieldset>
+            <p>
+              <label for="titre">Titre du sujet</label>
+              <input
+                type="text"
+                id="titre"
+                name="titre"
+                maxlength="80"
+                required
+              />
+            </p>
+            <p>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                rows="6"
+                maxlength="500"
+                required
+              ></textarea>
+            </p>
+          </fieldset>
 
-                <fieldset>
-                    <legend><strong>Options de publication</strong></legend>
+          <fieldset>
+            <legend><strong>Options de publication</strong></legend>
 
-                    <label for="categorie">Catégorie</label>
-                    <select name="categorie" id="categorie">
-                        <option value="general">Général</option>
-                        <option value="aide">Aide</option>
-                        <option value="projet">Projets</option>
-                    </select>
+            <label for="categorie">Catégorie</label>
+            <select name="categorie" id="categorie">
+              <option value="general">Général</option>
+              <option value="aide">Aide</option>
+              <option value="projet">Projets</option>
+            </select>
 
-                    <p>
-                    <label>visibilité</label>
-                    </p>
-                    <input type="radio" id="public" name="visibilite" value="public" checked>
-                    <label for="public">Public</label>
-                    
-                    <input type="radio" id="prive" name="visibilite" value="prive">
-                    <label for="prive">Reservé aux membres</label>
-                    
-                    
-                </fieldset>
+            <p>
+              <label>visibilité</label>
+            </p>
+            <input
+              type="radio"
+              id="public"
+              name="visibilite"
+              value="public"
+              checked
+            />
+            <label for="public">Public</label>
 
-                <button type="submit" class="bouton">Publier le sujet</button>   
-            </form>
+            <input type="radio" id="prive" name="visibilite" value="prive" />
+            <label for="prive">Reservé aux membres</label>
+          </fieldset>
 
-        </section>
-
+          <button type="submit" class="bouton">Publier le sujet</button>
+        </form>
+      </section>
     </main>
     <footer class="pied">
-        <p>
-            MiniForum
-        </p>
-        <p>
-            Projet du cours de développement web Classe passerelle - cfpt-i
-
-        </p>
-        <!-- Pied de page-->
+      <p>MiniForum</p>
+      <p>Projet du cours de développement web Classe passerelle - cfpt-i</p>
+      <!-- Pied de page-->
     </footer>
-</body>
+  </body>
 </html>

@@ -6,168 +6,156 @@ couleur text en tete:    #EEEEEE
 #2C6F93 bleu intermediaire mat
 */
 /* === 1. Reglage generaux =============*/
-*{
-    box-sizing: border-box;
+* {
+  box-sizing: border-box;
 }
 body {
-    font-family: Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.6;
-    color:#222222;
-    background-color:#EEEEEE;
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 16px;
+  font-family: Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #222222;
+  background-color: #eeeeee;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 16px;
 }
 
 /* === 2. En tete et navigation ========*/
-.entete{
- display:flex;
- justify-content: space-between;
- align-items: center;
- background-color: #0A4666;
- color:#EEEEEE;
- padding:12px 24px;
- list-style: none;
- margin:0;
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0a4666;
+  color: #eeeeee;
+  padding: 12px 24px;
+  list-style: none;
+  margin: 0;
 }
 
-.entete a{
-    color:#EEEEEE;
-    text-decoration: none;
+.entete a {
+  color: #eeeeee;
+  text-decoration: none;
 }
 
-
-nav ul{
-    display: flex;
-    /*justify-content: space-between;
+nav ul {
+  display: flex;
+  /*justify-content: space-between;
     align-items: center;*/
-    gap: 20px;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  gap: 20px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
-.pied{
-    border: solid 1px ;
-    background-color: #DDDDDD ;
-    border-color: #2C6F93;
-    color:#222222;
-    border-radius: 3px;
-    padding:10px 0px;
-    margin-top: 30px;
-    text-align: center;
-    font-size: small;
-}
-
-
-
-
-
-
-.bouton{
-
-}
-
-.pied{
-
+.pied {
+  border: solid 1px;
+  background-color: #dddddd;
+  border-color: #2c6f93;
+  color: #222222;
+  border-radius: 3px;
+  padding: 10px 0px;
+  margin-top: 30px;
+  text-align: center;
+  font-size: small;
 }
 
 /* === 3. Contenu principal ============*/
 /* === 4. Cartes de sujet ==============*/
-.liste-sujet{
-    display : flex;
-    flex-direction:column;
-    gap : 16px;
-
+.liste-sujet {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.carte-sujet{
-    padding:0px 16px;
-    border: solid 1px;
-    border-radius:8px;
-    border-color: #2C6F93;
-    margin-top: 20px;
-    background-color: white;
+.carte-sujet {
+  padding: 0px 16px;
+  border: solid 1px;
+  border-radius: 8px;
+  border-color: #2c6f93;
+  margin-top: 20px;
+  background-color: white;
 }
-.carte-sujet>h3{
-    font-size: larger;
-    color:#0A4666;
+.carte-sujet > h3 {
+  font-size: larger;
+  color: #0a4666;
 }
 
-.carte-message{
-    padding:0px 16px;
-    border: solid 1px;
-    border-radius:8px;
-    border-color: #2C6F93;
-    margin-top: 20px;
-    background-color: white;
+.carte-message {
+  padding: 0px 16px;
+  border: solid 1px;
+  border-radius: 8px;
+  border-color: #2c6f93;
+  margin-top: 20px;
+  background-color: white;
 }
 
 /* === 5. Formulaires =================*/
 
-input, textarea, select, button {
-    font-family:inherit;
-    width: 100%;
-    padding: 8px;
-    border :solid 1px;
-    border-radius: 8px;
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  width: 100%;
+  padding: 8px;
+  border: solid 1px;
+  border-radius: 8px;
 }
-label{
-    display:block;
-    margin: 8px;
+label {
+  display: block;
+  margin: 8px;
 }
-fieldset{
-    background-color: white;
-    margin: 10px;
+fieldset {
+  background-color: white;
+  margin: 10px;
 }
-.bouton{
-    color : white;
-    border: 0px;
-    padding: 16px;
-    cursor: pointer;
+.bouton {
+  color: white;
+  border: 0px;
+  padding: 16px;
+  cursor: pointer;
 }
-textarea{
-    resize: vertical;
-
+textarea {
+  resize: vertical;
 }
-nav a:hover{
-    color:orange;
+nav a:hover {
+  color: orange;
 }
 nav a:focus-visible {
-outline: 2px solid orange   ;
-outline-offset: 2px;
+  outline: 2px solid orange;
+  outline-offset: 2px;
 }
-a:hover{
-    color:#0056b3;
+a:hover {
+  color: #0056b3;
 }
-button:hover, input:hover :hover{
-    background-color: #0056b3;       
+button:hover,
+input:hover :hover {
+  background-color: #0056b3;
 }
 liste-messages li:nth-child(even) {
-    background-color: whitesmoke; 
+  background-color: whitesmoke;
 }
-input:focus,textarea:focus{
-    border: 3px solid  #0056b3;
-    outline:1px;
+input:focus,
+textarea:focus {
+  border: 3px solid #0056b3;
+  outline: 1px;
 }
 
 input:focus {
   outline: 1px solid #0056b3;
 }
 
-header input:focus{
-    border: 2px solid orange;
-    outline : 1px;
+header input:focus {
+  border: 2px solid orange;
+  outline: 1px;
 }
 
 /* === 6. Pied de page =================*/
 
-button{
-    background-color: #1D4E89;
-    color : white;
-    padding : 10px 20px ;
-    border : none;
-    border-radius:8px;
-    cursor: pointer;
+button {
+  background-color: #1d4e89;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
-
