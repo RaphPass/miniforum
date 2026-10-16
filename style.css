@@ -93,7 +93,8 @@ nav ul {
 input,
 textarea,
 select,
-button {
+button,
+fieldset {
   font-family: inherit;
   width: 100%;
   padding: 8px;
@@ -106,7 +107,7 @@ label {
 }
 fieldset {
   background-color: white;
-  margin: 10px;
+  border-color: #2c6f93;
 }
 .bouton {
   color: white;

@@ -1,71 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Connexion</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="entete">
+      <!-- Titre du site + navigation-->
+      <h1>MiniForum</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html" style="font-size: 20px">Accueil</a></li>
+          <li><a href="#sujets" style="font-size: 20px">Sujets</a></li>
+          <li>
+            <a href="inscription.html" style="font-size: 20px">Inscription</a>
+          </li>
+          <li>
+            <a href="connexion.html" style="font-size: 20px">Connexion</a>
+          </li>
+          <li>
+            <form action="recherche.html" method="get" style="display: inline">
+              <!-- On utilise ici get car ça permet de placer les données dans l'url -->
 
-</head>
-<body>
-    <header class="entete"><!-- Titre du site + navigation-->
-        <h1>MiniForum</h1>
-        <nav>
-            <ul>
-                <li>
-                    <a href='index.html' style="font-size: 20px">Accueil</a>
-                    <a href='index.html#sujets' style="font-size: 20px">Sujets</a>
-                    <a href='inscription.html' style="font-size: 20px">Inscription</a>
-                    <a href='connexion.html' style="font-size: 20px">Connexion</a>
-
-                    <form action="recherche.html" method="get" style="display:inline">
-                        <!-- On utilise ici get car ça permet de placer les données dans l'url -->
-
-                        <input type="search" name="rechercher" placeholder="rechercher">
-                        <button type="submit">Rechercher</button>
-
-                    </form>
-                </li>
-            </ul>
-        </nav>
+              <input type="search" name="rechercher" placeholder="rechercher" />
+              <button type="submit">Rechercher</button>
+            </form>
+          </li>
+        </ul>
+      </nav>
     </header>
     <main>
-        <h2>Connexion</h2>
-        <form action="/connexion" method="post">
-            <fieldset>
-                <legend><strong>identifiants</strong></legend>
-                <p>
-                <label for="identifiant">Pseudo ou adresse e-mail</label>
-                <input type="text" id="identifiant" name="identifiant" required>
-                </p>
+      <h2>Connexion</h2>
+      <form action="/connexion" method="post">
+        <fieldset>
+          <legend><strong>identifiants</strong></legend>
+          <p>
+            <label for="identifiant">Pseudo ou adresse e-mail</label>
+            <input type="text" id="identifiant" name="identifiant" required />
+          </p>
 
-                <p>
-                <label for="motdepasse">Mot de passe</label>
-                <input type="password" id="motdepasse" name="motdepasse" required>
-                </p>
+          <p>
+            <label for="motdepasse">Mot de passe</label>
+            <input type="password" id="motdepasse" name="motdepasse" required />
+          </p>
 
-                <p>
-                <input type="checkbox" name="resterconnecter" id="resterconnecter">
-                <label for="resterconnecter">Rester connecté sur cet appareil</label>
-                </p>
-            </fieldset>
+          <p>
+            <input
+              type="checkbox"
+              name="resterconnecter"
+              id="resterconnecter"
+            />
+            <label for="resterconnecter"
+              >Rester connecté sur cet appareil</label
+            >
+          </p>
+        </fieldset>
 
-            <button type="submit" class="bouton">Se Connecter</button>
-            <a href="inscription.html">Pas encore de compte ? S'inscrire</a>
-
-        </form>
-
-
+        <button type="submit" class="bouton">Se Connecter</button>
+        <a href="inscription.html">Pas encore de compte ? S'inscrire</a>
+      </form>
     </main>
-    <footer class="pied"><!-- Pied de page-->
-        <p>
-            MiniForum
-        </p>
-        <p>
-            Projet du cours de développement web Classe passerelle - cfpt-i
-
-        </p>
-        
+    <footer class="pied">
+      <!-- Pied de page-->
+      <p>MiniForum</p>
+      <p>Projet du cours de développement web Classe passerelle - cfpt-i</p>
     </footer>
-</body>
+  </body>
 </html>
