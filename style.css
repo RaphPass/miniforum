@@ -1,11 +1,27 @@
-/*Couleurs:
-texte :                  #222222
-fond de page :           #EEEEEE
-couleur fond en tete:    #0A4666 bleu plus foncé
-couleur text en tete:    #EEEEEE
-#2C6F93 bleu intermediaire mat
-*/
 /* === 1. Reglage generaux =============*/
+:root {
+  /*Couleurs*/
+  --couleur-texte: #222222;
+  --couleur-fond-page: #eeeeee; /*gris légé #eeeeee */
+  --couleur-fond-en-tete: #0a4666; /*bleu plus foncé*/
+  --couleur-text-en-tete: #eeeeee; /*identique au fond de la page pour l'instant*/
+  --couleur-border: #2c6f93; /*bleu intermediaire mat*/
+  --couleur-fond-pied: #dddddd;
+  --couleur-fond-cartes: white;
+  --couleur-hover-nav: orange;
+  --couleur-boutton: #1d4e89;
+  --couleur-focus-hover: #0056b3; /*couleur du hover pour les boutons et les liens pas dans le nav, et focus du border des entree de texte*/
+  --couleur-ligne-alternée: whitesmoke;
+
+  /*Espacements (padding, margin et gap*/
+  --espace-petit: 0.5rem;
+  --espace-moyen: 1rem;
+  --espace-grand: 2rem;
+
+  /* Divers */
+  --rayon: 0.5rem; /*border-radius, courbe des coins de boites*/
+}
+
 * {
   box-sizing: border-box;
 }
@@ -13,11 +29,11 @@ body {
   font-family: Helvetica, Arial, sans-serif;
   font-size: 16px;
   line-height: 1.6;
-  color: #222222;
-  background-color: #eeeeee;
+  color: var(--couleur-texte);
+  background-color: var(--couleur-fond-page);
   margin: 0 auto;
   max-width: 900px;
-  padding: 16px;
+  padding: var(--espace-moyen);
 }
 
 /* === 2. En tete et navigation ========*/
@@ -25,15 +41,15 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #0a4666;
-  color: #eeeeee;
+  background-color: var(--couleur-fond-en-tete);
+  color: var(--couleur-text-en-tete);
   padding: 12px 24px;
   list-style: none;
   margin: 0;
 }
 
 .entete a {
-  color: #eeeeee;
+  color: var(--couleur-text-en-tete);
   text-decoration: none;
 }
 
@@ -48,9 +64,9 @@ nav ul {
 }
 .pied {
   border: solid 1px;
-  background-color: #dddddd;
-  border-color: #2c6f93;
-  color: #222222;
+  background-color: var(--couleur-fond-pied);
+  border-color: var(--couleur-border);
+  color: var(--couleur-texte);
   border-radius: 3px;
   padding: 10px 0px;
   margin-top: 30px;
@@ -63,29 +79,29 @@ nav ul {
 .liste-sujet {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: var(--espace-moyen);
 }
 
 .carte-sujet {
-  padding: 0px 16px;
+  padding: 0px var(--espace-moyen);
   border: solid 1px;
-  border-radius: 8px;
-  border-color: #2c6f93;
+  border-radius: var(--rayon);
+  border-color: var(--couleur-border);
   margin-top: 20px;
-  background-color: white;
+  background-color: var(--couleur-fond-cartes);
 }
 .carte-sujet > h3 {
   font-size: larger;
-  color: #0a4666;
+  color: var(--couleur-fond-en-tete);
 }
 
 .carte-message {
-  padding: 0px 16px;
+  padding: 0px var(--espace-moyen);
   border: solid 1px;
-  border-radius: 8px;
-  border-color: #2c6f93;
+  border-radius: var(--rayon);
+  border-color: var(--couleur-border);
   margin-top: 20px;
-  background-color: white;
+  background-color: var(--couleur-fond-cartes);
 }
 
 /* === 5. Formulaires =================*/
@@ -97,66 +113,66 @@ button,
 fieldset {
   font-family: inherit;
   width: 100%;
-  padding: 8px;
+  padding: var(--espace-petit);
   border: solid 1px;
-  border-radius: 8px;
+  border-radius: var(--rayon);
 }
 label {
   display: block;
-  margin: 8px;
+  margin: var(--espace-petit);
 }
 fieldset {
-  background-color: white;
-  border-color: #2c6f93;
+  background-color: var(--couleur-fond-cartes);
+  border-color: var(--couleur-border);
 }
 .bouton {
-  color: white;
+  color: var(--couleur-fond-cartes);
   border: 0px;
-  padding: 16px;
+  padding: var(--espace-moyen);
   cursor: pointer;
 }
 textarea {
   resize: vertical;
 }
 nav a:hover {
-  color: orange;
+  color: var(--couleur-hover-nav);
 }
 nav a:focus-visible {
-  outline: 2px solid orange;
+  outline: 2px solid var(--couleur-hover-nav);
   outline-offset: 2px;
 }
 a:hover {
-  color: #0056b3;
+  color: var(--couleur-focus-hover);
 }
 button:hover,
 input:hover :hover {
-  background-color: #0056b3;
+  background-color: var(--couleur-focus-hover);
 }
 liste-messages li:nth-child(even) {
-  background-color: whitesmoke;
+  background-color: var(----couleur-ligne-alternée);
 }
 input:focus,
 textarea:focus {
-  border: 3px solid #0056b3;
+  border: 3px solid var(--couleur-focus-hover);
   outline: 1px;
 }
 
 input:focus {
-  outline: 1px solid #0056b3;
+  outline: 1px solid var(--couleur-focus-hover);
 }
 
 header input:focus {
-  border: 2px solid orange;
+  border: 2px solid var(--couleur-hover-nav);
   outline: 1px;
 }
 
 /* === 6. Pied de page =================*/
 
 button {
-  background-color: #1d4e89;
-  color: white;
+  background-color: var(--couleur-boutton);
+  color: var(--couleur-fond-cartes);
   padding: 10px 20px;
   border: none;
-  border-radius: 8px;
+  border-radius: var(--rayon);
   cursor: pointer;
 }
