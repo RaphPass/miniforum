@@ -26,14 +26,18 @@
 * {
   box-sizing: border-box;
 }
+img {
+  max-width: 100%;
+  height: auto;
+}
 body {
   font-family: Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--couleur-texte);
   background-color: var(--couleur-fond-page);
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 60rem;
   padding: var(--espace-moyen);
 }
 
@@ -44,7 +48,7 @@ body {
   align-items: center;
   background-color: var(--couleur-fond-en-tete);
   color: var(--couleur-text-en-tete);
-  padding: 12px 24px;
+  padding: var(--espace-moyen) var(--espace-grand);
   list-style: none;
   margin: 0;
 }
@@ -58,7 +62,7 @@ nav ul {
   display: flex;
   /*justify-content: space-between;
     align-items: center;*/
-  gap: 20px;
+  gap: var(--espace-moyen);
   list-style: none;
   margin: 0;
   padding: 0;
@@ -69,10 +73,10 @@ nav ul {
   border-color: var(--couleur-border);
   color: var(--couleur-texte);
   /* border-radius: 3px; */
-  padding: 10px 0px;
-  margin-top: 30px;
+  padding: var(--espace-petit) 0rem;
+  margin-top: var(--espace-grand);
   text-align: center;
-  font-size: small;
+  font-size: 0.5rem;
 }
 
 /* === 3. Contenu principal ============*/
@@ -84,24 +88,24 @@ nav ul {
 }
 
 .carte-sujet {
-  padding: 0px var(--espace-moyen);
+  padding: 0rem var(--espace-moyen);
   border: solid 1px;
   border-radius: var(--rayon);
   border-color: var(--couleur-border);
-  margin-top: 20px;
+  margin-top: var(--espace-moyen);
   background-color: var(--couleur-fond-cartes);
 }
 .carte-sujet > h3 {
-  font-size: larger;
+  font-size: 1.5rem;
   color: var(--couleur-fond-en-tete);
 }
 
 .carte-message {
-  padding: 0px var(--espace-moyen);
+  padding: 0rem var(--espace-moyen);
   border: solid 1px;
   border-radius: var(--rayon);
   border-color: var(--couleur-border);
-  margin-top: 20px;
+  margin-top: var(--espace-moyen);
   background-color: var(--couleur-fond-cartes);
 }
 
@@ -128,7 +132,7 @@ fieldset {
 }
 .bouton {
   color: var(--couleur-fond-cartes);
-  border: 0px;
+  border: 0rem;
   padding: var(--espace-moyen);
   cursor: pointer;
 }
@@ -172,7 +176,7 @@ header input:focus {
 button {
   background-color: var(--couleur-boutton);
   color: var(--couleur-fond-cartes);
-  padding: 10px 20px;
+  padding: var(--espace-petit) var(--espace-moyen);
   border: none;
   border-radius: var(--rayon);
   cursor: pointer;
