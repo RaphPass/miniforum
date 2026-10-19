@@ -12,6 +12,7 @@
   --couleur-boutton: #1d4e89;
   --couleur-focus-hover: #0056b3; /*couleur du hover pour les boutons et les liens pas dans le nav, et focus du border des entree de texte*/
   --couleur-ligne-alternée: whitesmoke;
+  --couleur-accent: orange; /* pas utilisé encore */
 
   /*Espacements (padding, margin et gap*/
   --espace-petit: 0.5rem;
@@ -67,7 +68,7 @@ nav ul {
   background-color: var(--couleur-fond-pied);
   border-color: var(--couleur-border);
   color: var(--couleur-texte);
-  border-radius: 3px;
+  /* border-radius: 3px; */
   padding: 10px 0px;
   margin-top: 30px;
   text-align: center;
