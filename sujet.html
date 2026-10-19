@@ -33,51 +33,50 @@
     </header>
 
     <main>
-      <nav>
-        <ul>
-          <li>
-            <a href="index.html">Retour vers l'index</a>
-          </li>
-        </ul>
-      </nav>
-      <h2>Titre Sujet</h2>
-      <p>auteur, date, catégorie</p>
-      <section>
-        <h3>Réponses</h3>
-        <article>
-          <h4>Titre1</h4>
-          <!--Erreur si pas de titre pour l'article-->
-          <p>
-            <strong>auteur1</strong>,
-            <time datetime="2026-09-24">24 septembre 2026</time>
-          </p>
-          <p class="carte-message">texte du message</p>
-        </article>
-        <article>
-          <h4>Titre2</h4>
-          <p><strong>auteur2</strong>, date</p>
-          <p class="carte-message">texte du message</p>
-        </article>
-        <article>
-          <h4>Titre3</h4>
-          <p><strong>auteur3</strong>, date</p>
-          <p class="carte-message">texte du message</p>
-          <form action="/reponse" method="post">
-            <h3>Répondre à ce sujet</h3>
-            <fieldset>
-              <legend>Votre réponse</legend>
+      <a href="index.html">Retour vers l'index</a>
 
-              <label for="pseudo"><strong>Pseudo</strong></label>
-              <input type="text" name="pseudo" id="pseudo" required />
+      <div class="zone-sujet">
+        <section class="fil-messages">
+          <h3>Réponses</h3>
+          <article>
+            <h4>Titre1</h4>
+            <!--Erreur si pas de titre pour l'article-->
+            <p>
+              <strong>auteur1</strong>,
+              <time datetime="2026-09-24">24 septembre 2026</time>
+            </p>
+            <p class="carte-message">texte du message</p>
+          </article>
+          <article>
+            <h4>Titre2</h4>
+            <p><strong>auteur2</strong>, date</p>
+            <p class="carte-message">texte du message</p>
+          </article>
+          <article>
+            <h4>Titre3</h4>
+            <p><strong>auteur3</strong>, date</p>
+            <p class="carte-message">texte du message</p>
+          </article>
+        </section>
+        <aside class="infos-sujet">
+          <h3>À propos de ce sujet</h3>
+          <h2>Titre Sujet</h2>
+          <p>auteur, date, catégorie, nombre de réponses</p>
+        </aside>
+      </div>
+      <form action="/reponse" method="post">
+        <h3>Répondre à ce sujet</h3>
+        <fieldset>
+          <legend>Votre réponse</legend>
 
-              <label for="message"><strong>Message</strong></label>
-              <textarea name="message" id="message" required></textarea>
-            </fieldset>
-            <button type="submit" class="bouton">Envoyer la réponse</button>
-          </form>
-        </article>
-      </section>
+          <label for="pseudo"><strong>Pseudo</strong></label>
+          <input type="text" name="pseudo" id="pseudo" required />
 
+          <label for="message"><strong>Message</strong></label>
+          <textarea name="message" id="message" required></textarea>
+        </fieldset>
+        <button type="submit" class="bouton">Envoyer la réponse</button>
+      </form>
       <!-- Liste des sujets-->
     </main>
 

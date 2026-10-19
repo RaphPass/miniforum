@@ -46,7 +46,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  align-items: left;
+  align-items: start;
   background-color: var(--couleur-fond-en-tete);
   color: var(--couleur-text-en-tete);
   padding: var(--espace-moyen) var(--espace-grand);
@@ -89,6 +89,22 @@ nav ul {
 }
 
 /* === 3. Contenu principal ============*/
+.zone-sujet {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espace-grand);
+}
+.fil-message {
+  flex: 1 1 24rem;
+}
+.infos-sujet {
+  flex: 0 0 16rem;
+  background-color: var(--couleur-fond-cartes);
+  padding: var(--espace-moyen);
+  border-radius: var(--rayon);
+  border: solid 1px;
+  border-color: var(--couleur-border);
+}
 /* === 4. Cartes de sujet ==============*/
 .liste-sujet {
   display: flex;
@@ -166,7 +182,7 @@ input:hover :hover {
   background-color: var(--couleur-focus-hover);
 }
 liste-messages li:nth-child(even) {
-  background-color: var(----couleur-ligne-alternée);
+  background-color: var(--couleur-ligne-alternée);
 }
 input:focus,
 textarea:focus {
