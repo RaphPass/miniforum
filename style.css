@@ -84,10 +84,12 @@ nav ul {
 .liste-sujet {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   gap: var(--espace-moyen);
 }
 
 .carte-sujet {
+  flex: 1 1 18rem;
   padding: 0rem var(--espace-moyen);
   border: solid 1px;
   border-radius: var(--rayon);
@@ -96,6 +98,7 @@ nav ul {
   background-color: var(--couleur-fond-cartes);
 }
 .carte-sujet > h3 {
+  flex: 1 1 100%;
   font-size: 1.5rem;
   color: var(--couleur-fond-en-tete);
 }
