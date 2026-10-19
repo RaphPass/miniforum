@@ -44,8 +44,9 @@ body {
 /* === 2. En tete et navigation ========*/
 .entete {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
-  align-items: center;
+  align-items: left;
   background-color: var(--couleur-fond-en-tete);
   color: var(--couleur-text-en-tete);
   padding: var(--espace-moyen) var(--espace-grand);
@@ -60,12 +61,20 @@ body {
 
 nav ul {
   display: flex;
+  flex-wrap: wrap;
   /*justify-content: space-between;
     align-items: center;*/
   gap: var(--espace-moyen);
   list-style: none;
   margin: 0;
   padding: 0;
+}
+@media (min-width: 48rem) {
+  .entete {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 }
 .pied {
   border: solid 1px;
