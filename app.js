@@ -8,6 +8,8 @@ console.log("app.js chargé"); //fonctionne dans les 4 pages
 //longueur limite des titres
 const LONGUEUR_MIN = 5;
 const LONGUEUR_MAX = 80;
+//longueur limite des messages
+const MESSAGE_MAX = 500;
 
 //titres des sujets, plus ancien au plus récent //titre 4-6 existent pas encore...
 const titres = [
@@ -89,7 +91,23 @@ function afficherSujets(liste) {
 function afficherErreur(idMessage, texte) {
   document.querySelector(idMessage).textContent = texte;
 }
-
+function validerPseudo(saisie) {
+  saisie = saisie.trim();
+  if (saisie.length === 0) {
+    return "Le pseudo est obligatoire.";
+  }
+  return "";
+}
+function validerMessage(saisie) {
+  saisie = saisie.trim();
+  if (saisie.length === 0) {
+    return "Le message est obligatoire.";
+  }
+  if (saisie.length > MESSAGE_MAX) {
+    return "Le message ne doit pas dépasser " + MESSAGE_MAX + " caractères.";
+  }
+  return "";
+}
 //tests etape 4
 console.log(" --- etape 4 ---");
 console.table(titresTries(titres));
@@ -122,18 +140,37 @@ if (document.querySelector("#sujets") !== null) {
   const form = document.querySelector(".form-nouveau-sujet");
   form.addEventListener("submit", (event) => {
     event.preventDefault();
-    const saisie = document.querySelector("#titre").value;
 
-    if (validerTitre(titres, saisie) !== "") {
-      afficherErreur("#erreur-titre", validerTitre(titres, saisie));
-      form.reset();
+    const pseudo = document.querySelector("#pseudo").value;
+    const titre = document.querySelector("#titre").value;
+    const message = document.querySelector("#message").value;
+
+    if (validerPseudo(pseudo) !== "") {
+      afficherErreur("#erreur-pseudo", validerPseudo(pseudo));
+      document.querySelector("#pseudo").focus();
+      return;
+    }
+    if (validerTitre(titres, titre) !== "") {
+      afficherErreur("#erreur-titre", validerTitre(titres, titre));
+      document.querySelector("#pseudo").focus();
+      return;
+    }
+    if (validerMessage(message) !== "") {
+      afficherErreur("#erreur-message", validerMessage(message));
       document.querySelector("#pseudo").focus();
       return;
     } else {
-      titres.push(saisie.trim());
+      titres.push(titre); //ajout du nouveau titre ici
       afficherSujets(titres);
+      form.reset();
+      document.querySelector("#pseudo").focus();
     }
-    form.reset();
-    document.querySelector("#pseudo").focus();
   });
 }
+
+//test
+console.log("[" + validerPseudo(" ") + "]");
+console.log("[" + validerPseudo(" alice ") + "]");
+console.log("[" + validerMessage(" ") + "]");
+console.log("[" + validerMessage("a".repeat(500)) + "]");
+console.log("[" + validerMessage("a".repeat(501)) + "]");
