@@ -63,6 +63,27 @@ function validerTitre(titres, saisie) {
   }
   return "";
 }
+function carteSujet(titre) {
+  const sujet = document.createElement("article");
+  sujet.classList.add("carte-sujet");
+
+  const h3 = document.createElement("h3");
+  h3.textContent = titre;
+  sujet.append(h3);
+  return sujet;
+}
+
+function afficherSujets(liste) {
+  const sujets = document.querySelector("#sujets");
+  const cartes = document.querySelectorAll(".carte-sujet");
+
+  for (let i = 0; i < cartes.length; i++) {
+    cartes[i].remove();
+  }
+  for (let i = 0; i < liste.length; i++) {
+    sujets.append(carteSujet(liste[i]));
+  }
+}
 
 //tests etape 4
 console.log(" --- etape 4 ---");
@@ -88,4 +109,9 @@ reponse = validerTitre(titres, "a".repeat(80));
 console.log(" [ " + reponse + " ] ");
 reponse = validerTitre(titres, " abcd ");
 console.log(" [ " + reponse + " ] ");
-//Tout marche
+
+//demarrage: seulement sur la page qui contient la liste (tp7)
+if (document.querySelector("#sujets") !== null) {
+  afficherSujets(titres);
+  //ecouteur du formulaire ici à l'étape 4
+}
