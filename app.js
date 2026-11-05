@@ -46,15 +46,6 @@ function titreExiste(titres, saisie) {
   return exist;
 }
 
-//verificaction
-console.log(" --- etape 4 ---");
-console.table(titresTries(titres));
-console.log(titres[0]);
-console.log(chercheDansTitres(titres, "sql"));
-console.log(chercheDansTitres(titres, "licorne"));
-console.log(titreExiste(titres, " titre5sql "));
-console.log(titreExiste(titres, " Un titre invent é "));
-
 //test les entrée de nouveau titres et affiche un message correspondant à l'erreur
 function validerTitre(titres, saisie) {
   const titre = saisie.trim();
@@ -72,12 +63,22 @@ function validerTitre(titres, saisie) {
   }
   return "";
 }
-//verification
+
+//tests etape 4
+console.log(" --- etape 4 ---");
+console.table(titresTries(titres));
+console.log(titres[0]);
+console.log(chercheDansTitres(titres, "sql"));
+console.log(chercheDansTitres(titres, "licorne"));
+console.log(titreExiste(titres, " titre5sql "));
+console.log(titreExiste(titres, " Un titre invent é "));
+
+//tests étape 5
 console.log(" --- etape 5 ---");
 console.log(validerTitre(titres, " "));
 console.log(validerTitre(titres, "       "));
 console.log(validerTitre(titres, " Git "));
-console.log(validerTitre(titres, " a ".repeat(81)));
+console.log(validerTitre(titres, " a".repeat(81)));
 console.log(validerTitre(titres, "titre5SQL"));
 let reponse = validerTitre(titres, " Comment lire une erreur ? ");
 console.log(" [ " + reponse + " ] ");
