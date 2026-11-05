@@ -46,7 +46,7 @@
       <section id="sujets" class="list-sujets">
         <h2>Sujets récent</h2>
 
-        <article class="carte-sujet">
+        <!--         <article class="carte-sujet"> 
           <h3><a href="sujet.html"> Sujet1 </a></h3>
           <strong>auteur1</strong>, catégorie1
           <p>paragraphe1</p>
@@ -62,12 +62,12 @@
           <h3>Sujet3</h3>
           <strong>auteur3</strong>, catégorie3
           <p>paragraphe3</p>
-        </article>
+        </article> -->
       </section>
       <!--creation de nouveaux sujets-->
       <section>
         <h2>Nouveau sujet</h2>
-        <form action="/topics" method="post">
+        <form action="/topics" method="post" id="form-nouveau-sujet" novalidate>
           <fieldset>
             <legend><strong>Votre message</strong></legend>
             <p>
@@ -78,8 +78,9 @@
                 name="pseudo"
                 placeholder="Roger"
                 required
-              />
+              /><p class="message-erreur" id="erreur-pseudo" > </p >
             </p>
+            
 
             <p>
               <label for="titre">Titre du sujet</label>
@@ -90,7 +91,8 @@
                 maxlength="80"
                 required
               />
-            </p>
+            </p><p class="message-erreur" id="erreur-titre" > </p >
+            
             <p>
               <label for="message">Message</label>
               <textarea
@@ -100,6 +102,7 @@
                 maxlength="500"
                 required
               ></textarea>
+              <p class="message-erreur" id="erreur-message" > </p >
             </p>
           </fieldset>
 

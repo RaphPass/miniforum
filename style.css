@@ -13,6 +13,7 @@
   --couleur-focus-hover: #0056b3; /*couleur du hover pour les boutons et les liens pas dans le nav, et focus du border des entree de texte*/
   --couleur-ligne-alternée: whitesmoke;
   --couleur-accent: orange; /* pas utilisé encore */
+  --couleur-erreur: red;
 
   /*Espacements (padding, margin et gap*/
   --espace-petit: 0.5rem;
@@ -138,7 +139,12 @@ nav ul {
 }
 
 /* === 5. Formulaires =================*/
-
+.message-erreur {
+  margin: 0.25rem;
+  min-height: 1.2rem;
+  color: var(--couleur-erreur);
+  font-size: 0.875rem;
+}
 input,
 textarea,
 select,
