@@ -54,3 +54,37 @@ console.log(chercheDansTitres(titres, "sql"));
 console.log(chercheDansTitres(titres, "licorne"));
 console.log(titreExiste(titres, " titre5sql "));
 console.log(titreExiste(titres, " Un titre invent é "));
+
+//test les entrée de nouveau titres et affiche un message correspondant à l'erreur
+function validerTitre(titres, saisie) {
+  const titre = saisie.trim();
+  if (titre.length === 0) {
+    return "Le titre est obligatoire";
+  }
+  if (titre.length < LONGUEUR_MIN) {
+    return "Le titre doit faire au moins " + LONGUEUR_MIN + " caractères.";
+  }
+  if (titre.length > LONGUEUR_MAX) {
+    return "Le titre doit faire au moins " + LONGUEUR_MAX + " caractères.";
+  }
+  if (titreExiste(titres, titre)) {
+    return "Ce sujet existe déjà.";
+  }
+  return "";
+}
+//verification
+console.log(" --- etape 5 ---");
+console.log(validerTitre(titres, " "));
+console.log(validerTitre(titres, "       "));
+console.log(validerTitre(titres, " Git "));
+console.log(validerTitre(titres, " a ".repeat(81)));
+console.log(validerTitre(titres, "titre5SQL"));
+let reponse = validerTitre(titres, " Comment lire une erreur ? ");
+console.log(" [ " + reponse + " ] ");
+reponse = validerTitre(titres, "abcde");
+console.log(" [ " + reponse + " ] ");
+reponse = validerTitre(titres, "a".repeat(80));
+console.log(" [ " + reponse + " ] ");
+reponse = validerTitre(titres, " abcd ");
+console.log(" [ " + reponse + " ] ");
+//Tout marche
