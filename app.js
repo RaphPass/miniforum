@@ -56,13 +56,14 @@ function validerTitre(titres, saisie) {
     return "Le titre doit faire au moins " + LONGUEUR_MIN + " caractères.";
   }
   if (titre.length > LONGUEUR_MAX) {
-    return "Le titre doit faire au moins " + LONGUEUR_MAX + " caractères.";
+    return "Le titre doit faire au maximum " + LONGUEUR_MAX + " caractères.";
   }
   if (titreExiste(titres, titre)) {
     return "Ce sujet existe déjà.";
   }
   return "";
 }
+//cree une nouvelle carte avec en entrée le titre
 function carteSujet(titre) {
   const sujet = document.createElement("article");
   sujet.classList.add("carte-sujet");
@@ -72,7 +73,7 @@ function carteSujet(titre) {
   sujet.append(h3);
   return sujet;
 }
-
+//supprime les sujets dans l'index pour afficher les sujets mis à jour
 function afficherSujets(liste) {
   const sujets = document.querySelector("#sujets");
   const cartes = document.querySelectorAll(".carte-sujet");
@@ -83,6 +84,10 @@ function afficherSujets(liste) {
   for (let i = 0; i < liste.length; i++) {
     sujets.append(carteSujet(liste[i]));
   }
+}
+//idMessage correspond à l'id des messages d'erreur soit : "erreur-pseudo", "#erreur-titre" ou "#erreur-message". texte est le message d'erreur affiché
+function afficherErreur(idMessage, texte) {
+  document.querySelector(idMessage).textContent = texte;
 }
 
 //tests etape 4
@@ -114,4 +119,21 @@ console.log(" [ " + reponse + " ] ");
 if (document.querySelector("#sujets") !== null) {
   afficherSujets(titres);
   //ecouteur du formulaire ici à l'étape 4
+  const form = document.querySelector(".form-nouveau-sujet");
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    const saisie = document.querySelector("#titre").value;
+
+    if (validerTitre(titres, saisie) !== "") {
+      afficherErreur("#erreur-titre", validerTitre(titres, saisie));
+      form.reset();
+      document.querySelector("#pseudo").focus();
+      return;
+    } else {
+      titres.push(saisie.trim());
+      afficherSujets(titres);
+    }
+    form.reset();
+    document.querySelector("#pseudo").focus();
+  });
 }
