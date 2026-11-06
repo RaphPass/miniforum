@@ -40,7 +40,7 @@ function titreExiste(titres, saisie) {
   saisie = saisie.trim();
   let exist = false;
   for (let i = 0; i < titres.length; i++) {
-    if (titres[i].trim().toUpperCase().includes(saisie)) {
+    if (titres[i].trim().toUpperCase() === saisie) {
       exist = true;
       break;
     }
@@ -139,25 +139,37 @@ if (document.querySelector("#sujets") !== null) {
   //ecouteur du formulaire ici à l'étape 4
   const form = document.querySelector(".form-nouveau-sujet");
   form.addEventListener("submit", (event) => {
+    //Nous laisse traiter nous les erreurs
     event.preventDefault();
 
     const pseudo = document.querySelector("#pseudo").value;
     const titre = document.querySelector("#titre").value;
     const message = document.querySelector("#message").value;
 
-    if (validerPseudo(pseudo) !== "") {
-      afficherErreur("#erreur-pseudo", validerPseudo(pseudo));
+    // message d'erreur, "" si pas d'erreur
+    const erreurPseudo = validerPseudo(pseudo);
+    const erreurTitre = validerTitre(titres, titre);
+    const erreurMessage = validerMessage(message);
+
+    //Effacer les messages d'erreur
+    afficherErreur("#erreur-pseudo", "");
+    afficherErreur("#erreur-titre", "");
+    afficherErreur("#erreur-message", "");
+
+    //Afficher les messages d'erreur
+    if (erreurPseudo !== "") {
+      afficherErreur("#erreur-pseudo", erreurPseudo);
       document.querySelector("#pseudo").focus();
       return;
     }
-    if (validerTitre(titres, titre) !== "") {
-      afficherErreur("#erreur-titre", validerTitre(titres, titre));
-      document.querySelector("#pseudo").focus();
+    if (erreurTitre !== "") {
+      afficherErreur("#erreur-titre", erreurTitre);
+      document.querySelector("#titre").focus();
       return;
     }
-    if (validerMessage(message) !== "") {
-      afficherErreur("#erreur-message", validerMessage(message));
-      document.querySelector("#pseudo").focus();
+    if (erreurMessage !== "") {
+      afficherErreur("#erreur-message", erreurMessage);
+      document.querySelector("#message").focus();
       return;
     } else {
       titres.push(titre); //ajout du nouveau titre ici
