@@ -172,7 +172,7 @@ if (document.querySelector("#sujets") !== null) {
       document.querySelector("#message").focus();
       return;
     } else {
-      titres.push(titre); //ajout du nouveau titre ici
+      titres.push(titre.trim()); //ajout du nouveau titre ici
       afficherSujets(titres);
       form.reset();
       document.querySelector("#pseudo").focus();
