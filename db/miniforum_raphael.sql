@@ -1,0 +1,327 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Hôte : 127.0.0.1
+-- Généré le : jeu. 12 nov. 2026 à 16:32
+-- Version du serveur : 10.4.32-MariaDB
+-- Version de PHP : 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Base de données : `miniforum_raphael`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `likes`
+--
+
+CREATE TABLE `likes` (
+  `idUser` int(10) UNSIGNED NOT NULL,
+  `idPost` int(10) UNSIGNED NOT NULL,
+  `cree_le` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `likes`
+--
+
+INSERT INTO `likes` (`idUser`, `idPost`, `cree_le`) VALUES
+(1, 2, '2025-09-18 15:55:00'),
+(1, 28, '2025-10-05 10:10:00'),
+(1, 51, '2025-11-12 18:35:00'),
+(2, 1, '2025-09-18 15:12:00'),
+(2, 9, '2025-09-22 16:45:00'),
+(2, 42, '2025-10-26 11:40:00'),
+(2, 43, '2025-10-26 13:55:00'),
+(2, 70, '2026-01-02 14:40:00'),
+(3, 1, '2025-09-18 16:32:00'),
+(3, 2, '2025-09-19 16:45:00'),
+(3, 37, '2025-10-18 17:45:00'),
+(3, 47, '2025-11-03 15:20:00'),
+(3, 49, '2025-11-04 14:20:00'),
+(3, 77, '2026-01-09 18:50:00'),
+(4, 1, '2025-09-19 14:32:00'),
+(4, 4, '2025-09-18 21:35:00'),
+(4, 67, '2025-12-22 17:40:00'),
+(5, 1, '2026-01-06 14:32:00'),
+(5, 2, '2026-01-06 15:50:00'),
+(5, 9, '2026-01-07 18:25:00'),
+(5, 21, '2026-01-07 13:00:00'),
+(5, 37, '2026-01-07 22:30:00'),
+(5, 57, '2026-01-06 14:55:00'),
+(5, 72, '2026-01-07 21:00:00'),
+(6, 1, '2025-09-18 18:32:00'),
+(6, 15, '2025-09-29 12:25:00'),
+(6, 56, '2025-12-03 12:00:00'),
+(7, 1, '2025-09-18 18:02:00'),
+(7, 11, '2025-09-23 18:50:00'),
+(7, 21, '2025-10-04 10:30:00'),
+(7, 60, '2025-12-10 16:30:00'),
+(8, 32, '2025-10-11 16:45:00'),
+(8, 33, '2025-10-11 18:55:00'),
+(8, 64, '2025-12-16 13:35:00'),
+(9, 75, '2026-01-09 15:25:00');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `posts`
+--
+
+CREATE TABLE `posts` (
+  `idPost` int(10) UNSIGNED NOT NULL,
+  `contenu` text NOT NULL,
+  `cree_le` datetime NOT NULL DEFAULT current_timestamp(),
+  `idTopic` int(10) UNSIGNED NOT NULL,
+  `idUser` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `posts`
+--
+
+INSERT INTO `posts` (`idPost`, `contenu`, `cree_le`, `idTopic`, `idUser`) VALUES
+(1, 'Quand je fais git push, Git répond « rejected (fetch first) ». Je n\'ai rien cassé pourtant, je travaille seul sur mon dépôt.', '2025-09-18 14:32:00', 1, 1),
+(2, 'Tu as sûrement modifié un fichier directement sur GitHub, le README par exemple. Fais un git pull avant de pousser.', '2025-09-18 15:45:00', 1, 2),
+(3, 'Même problème la semaine dernière : j\'avais édité le README en ligne. Un git pull a tout réglé.', '2025-09-18 18:10:00', 1, 6),
+(4, 'Évite surtout git push --force tant que tu ne sais pas exactement ce que ça écrase.', '2025-09-18 19:35:00', 1, 7),
+(5, 'C\'était bien le README modifié en ligne. Pull, puis push : ça passe. Merci à tous !', '2025-09-18 20:50:00', 1, 1),
+(6, 'Pour la prochaine fois : git status avant chaque push, ça évite les surprises.', '2025-09-19 16:40:00', 1, 3),
+(7, 'Et lis le message d\'erreur jusqu\'au bout : Git propose souvent lui-même la commande à taper.', '2025-09-19 23:00:00', 1, 4),
+(8, 'J\'ai mis justify-content: center sur ma div, mais elle reste collée à gauche. Qu\'est-ce que je rate ?', '2025-09-22 15:47:00', 2, 2),
+(9, 'justify-content se met sur le parent, pas sur l\'élément à centrer. Et le parent doit avoir display: flex.', '2025-09-22 16:25:00', 2, 3),
+(10, 'Exactement. Le parent devient le conteneur flex, les enfants s\'alignent dedans.', '2025-09-22 17:15:00', 2, 1),
+(11, 'Pour centrer aussi verticalement, ajoute align-items: center et donne une hauteur au parent.', '2025-09-22 18:50:00', 2, 4),
+(12, 'Les DevTools affichent un petit badge flex à côté du conteneur : pratique pour vérifier qu\'il est bien actif.', '2025-09-23 16:05:00', 2, 7),
+(13, 'Sinon, margin: 0 auto centre horizontalement un bloc qui a une largeur, sans Flexbox.', '2025-09-23 18:35:00', 2, 6),
+(14, 'Sur mon téléphone, le texte est minuscule et je dois zoomer. Sur l\'ordinateur, tout va bien.', '2025-09-29 11:32:00', 3, 6),
+(15, 'Il te manque sûrement la balise meta viewport dans le head.', '2025-09-29 12:05:00', 3, 1),
+(16, 'Oui, la balise meta viewport avec width=device-width. Sans elle, le téléphone affiche une page de bureau réduite.', '2025-09-29 13:40:00', 3, 2),
+(17, 'Et teste avec le mode appareil des DevTools avant de sortir ton téléphone.', '2025-09-29 17:30:00', 3, 7),
+(18, 'Vérifie aussi tes largeurs en pixels : une colonne de 900px ne tiendra jamais sur un écran de 390px.', '2025-09-30 12:45:00', 3, 4),
+(19, 'Passe tes tailles de police en rem, et commence ta feuille de style par le mobile.', '2025-10-01 14:55:00', 3, 3),
+(20, 'MySQL répond « ERROR 1064 : You have an error in your SQL syntax ». Je ne vois rien de faux dans ma requête.', '2025-10-04 09:12:00', 4, 7),
+(21, 'Regarde le morceau cité après « near » : l\'erreur se trouve juste avant.', '2025-10-04 10:00:00', 4, 2),
+(22, 'Souvent, c\'est une virgule en trop avant FROM, ou une apostrophe pas refermée.', '2025-10-04 11:15:00', 4, 1),
+(23, 'Ou un mot réservé utilisé comme nom de colonne. Ça m\'est arrivé avec une colonne appelée order.', '2025-10-04 13:50:00', 4, 6),
+(24, 'Flexbox Froggy m\'a beaucoup aidée à retenir qui fait quoi entre le parent et les enfants.', '2025-10-04 16:55:00', 2, 8),
+(25, 'Je note. Chez moi, c\'était une histoire d\'identifiants : il fallait un jeton d\'accès, pas mon mot de passe.', '2025-10-04 18:30:00', 1, 8),
+(26, 'C\'était bien ça : je l\'avais mis sur l\'enfant. Merci, tout est centré !', '2025-10-04 18:45:00', 2, 2),
+(27, 'Exact, Emma : GitHub n\'accepte plus le mot de passe du compte pour pousser. Il faut un jeton.', '2025-10-04 21:15:00', 1, 2),
+(28, 'Écris ta requête sur plusieurs lignes : le numéro de ligne de l\'erreur devient beaucoup plus parlant.', '2025-10-05 09:25:00', 4, 3),
+(29, 'C\'était une virgule après la dernière colonne du SELECT. Merci, je ne l\'aurais jamais vue seul.', '2025-10-05 12:10:00', 4, 7),
+(30, 'Résumé pour ceux qui arrivent : pull avant push, jamais de --force, et un jeton plutôt qu\'un mot de passe.', '2025-10-05 15:35:00', 1, 4),
+(31, 'Je débute avec VS Code. Quelles extensions installez-vous en premier ?', '2025-10-11 14:57:00', 5, 8),
+(32, 'Live Server pour voir la page se recharger toute seule, et Prettier pour formater le code.', '2025-10-11 16:15:00', 5, 1),
+(33, 'ESLint, qui signale les erreurs JavaScript avant même de lancer la page.', '2025-10-11 17:55:00', 5, 2),
+(34, 'Et le pack de langue français, si tu préfères les menus en français.', '2025-10-12 15:40:00', 5, 7),
+(35, 'Attention à ne pas en installer vingt d\'un coup : chacune ralentit un peu l\'éditeur.', '2025-10-12 20:05:00', 5, 6),
+(36, 'Quand je clique sur Publier, la page se recharge et mon message disparaît avant que mon script ait fini.', '2025-10-18 16:37:00', 6, 3),
+(37, 'C\'est le comportement normal d\'un formulaire : il s\'envoie et recharge la page. Il faut appeler event.preventDefault().', '2025-10-18 17:30:00', 6, 4),
+(38, 'Dans l\'écouteur submit, en première ligne : event.preventDefault(); puis ton traitement.', '2025-10-18 19:05:00', 6, 1),
+(39, 'Vérifie que tu écoutes bien submit sur le formulaire, et pas click sur le bouton.', '2025-10-18 20:35:00', 6, 2),
+(40, 'preventDefault dans le submit, et ça tient. Merci Hugo !', '2025-10-18 21:50:00', 6, 3),
+(41, 'Je dois fusionner ma branche menu dans main et j\'ai peur de tout casser. Comment faites-vous ?', '2025-10-26 10:07:00', 7, 2),
+(42, 'git switch main, puis git merge menu. Si deux modifications se contredisent, Git s\'arrête et te montre les conflits.', '2025-10-26 11:15:00', 7, 1),
+(43, 'Un conflit n\'est pas une catastrophe : tu gardes la bonne version entre les marques <<<<<<< et >>>>>>>, puis tu commites.', '2025-10-26 12:45:00', 7, 7),
+(44, 'VS Code affiche des boutons pour accepter l\'une ou l\'autre version, c\'est très pratique.', '2025-10-27 10:10:00', 7, 6),
+(45, 'Et fais un commit propre avant de fusionner : tu pourras toujours revenir en arrière.', '2025-10-27 14:35:00', 7, 4),
+(46, 'Mon bouton ne réagit pas au clic. Je ne vois pas ce qui manque.', '2025-11-03 13:42:00', 8, 3),
+(47, 'Ton script est peut-être chargé avant le bouton. Mets la balise script en fin de body, ou ajoute defer.', '2025-11-03 14:40:00', 8, 1),
+(48, 'Vérifie aussi ton sélecteur : querySelector renvoie null s\'il ne trouve rien.', '2025-11-03 17:05:00', 8, 8),
+(49, 'Classique : addEventListener(\'click\', maFonction()) avec les parenthèses appelle la fonction tout de suite. Il faut maFonction, sans parenthèses.', '2025-11-04 13:50:00', 8, 7),
+(50, 'J\'aimerais placer le formulaire de réponse à l\'intérieur du formulaire de recherche. C\'est permis ?', '2025-11-12 17:17:00', 9, 1),
+(51, 'Non : le HTML interdit un form dans un autre form. Le navigateur ignore le second.', '2025-11-12 18:20:00', 9, 3),
+(52, 'Fais deux formulaires l\'un après l\'autre, chacun avec son propre bouton.', '2025-11-12 20:45:00', 9, 6),
+(53, 'Le validateur du W3C le signale tout de suite, ça vaut la peine de l\'utiliser.', '2025-11-13 17:35:00', 9, 4),
+(54, 'J\'arrive après la bataille, mais un console.log au début de la fonction dit tout de suite si elle est appelée.', '2025-11-21 15:40:00', 8, 9),
+(55, 'Quand une page a peu de contenu, mon pied de page remonte au milieu de l\'écran.', '2025-12-03 09:52:00', 10, 6),
+(56, 'Mets body en display: flex et flex-direction: column, avec min-height: 100vh, puis flex: 1 sur le main.', '2025-12-03 11:30:00', 10, 1),
+(57, 'Avec Grid, ça marche aussi : grid-template-rows: auto 1fr auto sur le body.', '2025-12-03 13:55:00', 10, 7),
+(58, 'J\'ai testé la version Flexbox : c\'est parfait. Merci Malik.', '2025-12-04 11:50:00', 10, 8),
+(59, 'La console affiche « Uncaught ReferenceError: total is not defined ». Pourtant, ma variable existe.', '2025-12-10 15:22:00', 11, 7),
+(60, 'Elle existe peut-être, mais pas à cet endroit : une variable déclarée dans une fonction n\'est pas visible au-dehors.', '2025-12-10 16:05:00', 11, 2),
+(61, 'Vérifie aussi l\'orthographe : Total et total sont deux noms différents en JavaScript.', '2025-12-10 17:40:00', 11, 4),
+(62, 'Ou alors le script qui la déclare est chargé après celui qui l\'utilise.', '2025-12-11 16:20:00', 11, 9),
+(63, 'Ma grille de trois colonnes dépasse l\'écran à droite, et une barre de défilement horizontale apparaît.', '2025-12-16 11:47:00', 12, 8),
+(64, 'Tu as sans doute des colonnes en pixels. Essaie grid-template-columns: repeat(3, 1fr).', '2025-12-16 13:15:00', 12, 3),
+(65, 'Et pense à box-sizing: border-box, sinon le padding s\'ajoute à la largeur.', '2025-12-16 14:45:00', 12, 1),
+(66, 'Je tape git log --oneline --graph --all vingt fois par jour. Peut-on raccourcir ?', '2025-12-22 14:32:00', 13, 4),
+(67, 'Oui, avec git config --global alias.lg suivi de la commande entre guillemets. Ensuite, git lg suffit.', '2025-12-22 16:40:00', 13, 1),
+(68, 'Je ne connaissais pas. Mon préféré : alias.st pour git status.', '2025-12-23 17:30:00', 13, 9),
+(69, 'Sur le PC de mon stage, je n\'ai pas les droits d\'administrateur. Comment installer Node.js ?', '2026-01-02 10:42:00', 14, 2),
+(70, 'Le site de Node propose une archive zip : tu la décompresses dans ton dossier personnel, sans installation.', '2026-01-02 13:50:00', 14, 8),
+(71, 'Je fais liste.innerHTML = nouveauSujet et tous les anciens sujets disparaissent.', '2026-01-04 16:12:00', 15, 3),
+(72, 'Le signe = remplace tout le contenu. Pour ajouter, crée un élément et utilise append.', '2026-01-04 20:30:00', 15, 9),
+(73, 'Je ne comprends pas quand utiliser className et quand utiliser classList.', '2026-01-06 09:27:00', 16, 9),
+(74, 'Ensuite, ajoute ce dossier au PATH de ton compte utilisateur, pas à celui du système.', '2026-01-09 11:40:00', 14, 10),
+(75, 'className remplace toutes les classes d\'un coup. classList.add ou classList.remove touche une seule classe sans effacer les autres.', '2026-01-09 12:25:00', 16, 10),
+(76, 'Je découvre le forum, mais j\'ai eu le même souci : c\'était une image sans max-width: 100%.', '2026-01-09 14:00:00', 12, 10),
+(77, 'Et pour un texte saisi par un utilisateur, textContent plutôt qu\'innerHTML : c\'est plus sûr.', '2026-01-09 16:50:00', 15, 10),
+(78, 'Est-ce qu\'on peut faire un menu burger sans une ligne de JavaScript ?', '2026-01-11 13:57:00', 17, 10),
+(79, 'npm install a créé un dossier node_modules énorme. Que contient-il, et faut-il le mettre sur Git ?', '2026-01-12 15:32:00', 18, 1),
+(80, 'Oui, avec une case à cocher cachée et le sélecteur :checked. Mais pour l\'accessibilité, un vrai bouton reste préférable.', '2026-01-15 18:20:00', 17, 9);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `topics`
+--
+
+CREATE TABLE `topics` (
+  `idTopic` int(10) UNSIGNED NOT NULL,
+  `titre` varchar(150) NOT NULL,
+  `cree_le` datetime NOT NULL DEFAULT current_timestamp(),
+  `idUser` int(10) UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `topics`
+--
+
+INSERT INTO `topics` (`idTopic`, `titre`, `cree_le`, `idUser`) VALUES
+(1, 'Git refuse mon push', '2025-09-18 14:30:00', 1),
+(2, 'Flexbox ne centre pas ma div', '2025-09-22 15:45:00', 2),
+(3, 'Ma page est illisible sur mobile', '2025-09-29 11:30:00', 6),
+(4, 'Erreur 1064, que faire ?', '2025-10-04 09:10:00', 7),
+(5, 'Quelle extension VS Code choisir ?', '2025-10-11 14:55:00', 8),
+(6, 'Le formulaire s\'envoie tout seul', '2025-10-18 16:35:00', 3),
+(7, 'Fusionner deux branches Git sans pleurer', '2025-10-26 10:05:00', 2),
+(8, 'addEventListener reste muet', '2025-11-03 13:40:00', 3),
+(9, 'Peut-on imbriquer deux balises form ?', '2025-11-12 17:15:00', 1),
+(10, 'Le footer remonte au milieu de la page', '2025-12-03 09:50:00', 6),
+(11, 'Console : X is not defined', '2025-12-10 15:20:00', 7),
+(12, 'Ma grille CSS déborde à droite', '2025-12-16 11:45:00', 8),
+(13, 'Un alias pour les commandes Git trop longues', '2025-12-22 14:30:00', 4),
+(14, 'Installer Node.js sans droits admin', '2026-01-02 10:40:00', 2),
+(15, 'Pourquoi mon innerHTML efface tout ?', '2026-01-04 16:10:00', 3),
+(16, 'Différence entre className et classList', '2026-01-06 09:25:00', 9),
+(17, 'Un menu burger en pur CSS', '2026-01-11 13:55:00', 10),
+(18, 'Que fait vraiment npm install ?', '2026-01-12 15:30:00', 1),
+(19, 'Vos raccourcis nodemon préférés', '2026-01-14 10:15:00', 7),
+(20, 'Checklist avant de rendre le jalon 2', '2026-01-15 08:45:00', 4);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `users`
+--
+
+CREATE TABLE `users` (
+  `idUser` int(10) UNSIGNED NOT NULL,
+  `pseudo` varchar(50) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `cree_le` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Déchargement des données de la table `users`
+--
+
+INSERT INTO `users` (`idUser`, `pseudo`, `email`, `cree_le`) VALUES
+(1, 'malik', 'malik.b@cfpt.ch', '2025-09-01 08:30:00'),
+(2, 'sarah', 'sarah.n@cfpt.ch', '2025-09-02 14:10:00'),
+(3, 'lea', 'lea.p@cfpt.ch ', '2025-09-03 09:45:00'),
+(4, 'hugo', 'hugo.d@cfpt.ch ', '2025-09-10 17:20:00'),
+(5, 'chloe', 'chloe.m@cfpt.ch', '2026-01-05 11:05:00'),
+(6, 'ines', 'ines.s@cfpt.ch', '2025-09-12 10:15:00'),
+(7, 'yanis', 'yanis.k@cpft.ch', '2025-09-14 16:40:00'),
+(8, 'emma', 'emma.f@cfpt.ch', '2025-10-02 13:25:00'),
+(9, 'lucas', 'lucas.g@cfpt.ch', '2025-11-20 19:55:00'),
+(10, 'alicia', 'alicia.r@cfpt.ch', '2026-01-08 09:30:00');
+
+--
+-- Index pour les tables déchargées
+--
+
+--
+-- Index pour la table `likes`
+--
+ALTER TABLE `likes`
+  ADD PRIMARY KEY (`idUser`,`idPost`),
+  ADD KEY `idPost` (`idPost`);
+
+--
+-- Index pour la table `posts`
+--
+ALTER TABLE `posts`
+  ADD PRIMARY KEY (`idPost`),
+  ADD KEY `idTopics` (`idTopic`),
+  ADD KEY `idUser` (`idUser`);
+
+--
+-- Index pour la table `topics`
+--
+ALTER TABLE `topics`
+  ADD PRIMARY KEY (`idTopic`),
+  ADD KEY `idUser` (`idUser`);
+
+--
+-- Index pour la table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`idUser`),
+  ADD UNIQUE KEY `email` (`email`);
+
+--
+-- AUTO_INCREMENT pour les tables déchargées
+--
+
+--
+-- AUTO_INCREMENT pour la table `posts`
+--
+ALTER TABLE `posts`
+  MODIFY `idPost` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=81;
+
+--
+-- AUTO_INCREMENT pour la table `topics`
+--
+ALTER TABLE `topics`
+  MODIFY `idTopic` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `users`
+--
+ALTER TABLE `users`
+  MODIFY `idUser` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+
+--
+-- Contraintes pour les tables déchargées
+--
+
+--
+-- Contraintes pour la table `likes`
+--
+ALTER TABLE `likes`
+  ADD CONSTRAINT `likes_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`) ON DELETE CASCADE,
+  ADD CONSTRAINT `likes_ibfk_2` FOREIGN KEY (`idPost`) REFERENCES `posts` (`idPost`) ON DELETE CASCADE;
+
+--
+-- Contraintes pour la table `posts`
+--
+ALTER TABLE `posts`
+  ADD CONSTRAINT `posts_ibfk_1` FOREIGN KEY (`idTopic`) REFERENCES `topics` (`idTopic`) ON DELETE CASCADE,
+  ADD CONSTRAINT `posts_ibfk_2` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`);
+
+--
+-- Contraintes pour la table `topics`
+--
+ALTER TABLE `topics`
+  ADD CONSTRAINT `topics_ibfk_1` FOREIGN KEY (`idUser`) REFERENCES `users` (`idUser`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

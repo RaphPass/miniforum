@@ -96,6 +96,9 @@ function validerPseudo(saisie) {
   if (saisie.length === 0) {
     return "Le pseudo est obligatoire.";
   }
+  if (saisie.find(" ")) {
+    return "Le pseudo ne peut pas contenir d'espace.";
+  }
   return "";
 }
 function validerMessage(saisie) {
@@ -137,7 +140,7 @@ console.log(" [ " + reponse + " ] ");
 if (document.querySelector("#sujets") !== null) {
   afficherSujets(titres);
   //ecouteur du formulaire ici à l'étape 4
-  const form = document.querySelector(".form-nouveau-sujet");
+  const form = document.querySelector("#form-nouveau-sujet");
   form.addEventListener("submit", (event) => {
     //Nous laisse traiter nous les erreurs
     event.preventDefault();
